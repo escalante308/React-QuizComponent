@@ -32,6 +32,11 @@ describe('Quiz Component', () => {
     if (yallReadyForThis()) {
       assert(quiz.find('QuizQuestion').length == 1 && quiz.find('QuizEnd').length == 0, "QuizQuestion should be displaying when isQuizEnd is false.")
       quiz.setState({quiz_position: quizData.quiz_questions.length+1 })
+
+      console.log(JSON.stringify(quiz))
+      console.log(quiz.find('QuizQuestion').length)
+      console.log(quiz.find('QuizEnd').length)
+
       assert(quiz.find('QuizQuestion').length == 0 && quiz.find('QuizEnd').length == 1, "QuizEnd should be displaying when isQuizEnd is true.")      
     } else {
       assert(false, "We couldn't find a const named `isQuizEnd`.")
