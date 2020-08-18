@@ -9,10 +9,6 @@ class QuizQuestion extends Component{
     }
 
     handleClick(buttonText) {
-
-        console.log(buttonText)
-        console.log(this.props.quiz_question.answer)
-
         if (buttonText === this.props.quiz_question.answer) {
             this.props.showNextQuestionHandler()
             this.setState({incorrectAnswer : false })
